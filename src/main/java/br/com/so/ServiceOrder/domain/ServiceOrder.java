@@ -3,18 +3,41 @@ package br.com.so.ServiceOrder.domain;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import br.com.so.ServiceOrder.domain.enums.Priority;
 import br.com.so.ServiceOrder.domain.enums.Status;
 
+
+@Entity(name = "servide_order")
 public class ServiceOrder {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime openingDate;
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime closingDate;
+	
 	private Integer priority;
 	private String comments;
 	private Integer status;
+	
+	@ManyToOne
+	@JoinColumn(name = "techinician_id")
 	private Technician technician;
+	
+	@ManyToOne
+	@JoinColumn(name = "client_id")
 	private Client client;
 
 	public ServiceOrder() {
@@ -23,9 +46,8 @@ public class ServiceOrder {
 		this.setPriority(Priority.LOW);
 	}
 
-	public ServiceOrder(Long id, Priority priority, String comments, Status status, Technician technician,
+	public ServiceOrder(Priority priority, String comments, Status status, Technician technician,
 			Client client) {
-		this.id = id;
 		this.openingDate = LocalDateTime.now();
 		this.priority = (priority == null) ? 0 : priority.getCod();
 		this.comments = comments;

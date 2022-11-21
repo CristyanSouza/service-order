@@ -2,17 +2,30 @@ package br.com.so.ServiceOrder.domain;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+
+@Entity
 public abstract class Person {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	
+	@CPF
 	private String cpf;
 	private String phoneNumber;
 	
 	public Person() {
 	}
 
-	public Person(Long id, String name, String cpf, String phoneNumber) {
-		this.id = id;
+	public Person(String name, String cpf, String phoneNumber) {
 		this.name = name;
 		this.cpf = cpf;
 		this.phoneNumber = phoneNumber;

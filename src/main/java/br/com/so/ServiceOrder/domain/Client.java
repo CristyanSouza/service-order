@@ -1,15 +1,29 @@
 package br.com.so.ServiceOrder.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity(name = "client")
 public class Client extends Person{
-
+	
+	@OneToMany(mappedBy = "client")
+	private List<ServiceOrder> listSO = new ArrayList<>();
+	
 	public Client() {
 		super();
 	}
 
-	public Client(Long id, String name, String cpf, String phoneNumber) {
-		super(id, name, cpf, phoneNumber);
+	public Client(String name, String cpf, String phoneNumber) {
+		super(name, cpf, phoneNumber);
 	}
 
+	public List<ServiceOrder> getListSO() {
+		return listSO;
+	}
+	
+	
 	
 }
