@@ -4,18 +4,18 @@ import java.util.Objects;
 
 public abstract class Person {
 	private Long id;
-	private String nome;
+	private String name;
 	private String cpf;
-	private String telefone;
+	private String phoneNumber;
 	
 	public Person() {
 	}
 
-	public Person(Long id, String nome, String cpf, String telefone) {
+	public Person(Long id, String name, String cpf, String phoneNumber) {
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 		this.cpf = cpf;
-		this.telefone = telefone;
+		this.phoneNumber = phoneNumber;
 	}
 
 
@@ -28,12 +28,12 @@ public abstract class Person {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name= name;
 	}
 
 	public String getCpf() {
@@ -44,18 +44,18 @@ public abstract class Person {
 		this.cpf = cpf;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setTelefone(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cpf, id, nome, telefone);
+		return Objects.hash(cpf, id, name, phoneNumber);
 	}
 
 	@Override
@@ -67,8 +67,8 @@ public abstract class Person {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		return Objects.equals(cpf, other.cpf) && Objects.equals(id, other.id) && Objects.equals(nome, other.nome)
-				&& Objects.equals(telefone, other.telefone);
+		return Objects.equals(cpf, other.cpf) && Objects.equals(id, other.id) && Objects.equals(name, other.name)
+				&& Objects.equals(phoneNumber, other.phoneNumber);
 	}
 	
 	
