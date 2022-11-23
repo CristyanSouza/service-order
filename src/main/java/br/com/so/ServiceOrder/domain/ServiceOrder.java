@@ -19,7 +19,7 @@ import br.com.so.ServiceOrder.domain.enums.Priority;
 import br.com.so.ServiceOrder.domain.enums.Status;
 
 
-@Entity(name = "servide_order")
+@Entity(name = "service_order")
 public class ServiceOrder {
 
 	@Id
