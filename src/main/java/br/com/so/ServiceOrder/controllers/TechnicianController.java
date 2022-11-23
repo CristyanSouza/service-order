@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.springframework.web.util.UriBuilder;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.so.ServiceOrder.domain.Technician;
 import br.com.so.ServiceOrder.dtos.TechnicianDTO;
@@ -45,7 +43,7 @@ public class TechnicianController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<TechnicianDTO> create(@RequestBody TechnicianDTO techDTO){
+	public ResponseEntity<TechnicianDTO> create(@Valid @RequestBody TechnicianDTO techDTO){
 		Technician technician = techService.create(techDTO);
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")

@@ -1,5 +1,7 @@
 package br.com.so.ServiceOrder.dtos;
 
+import javax.validation.constraints.NotEmpty;
+
 import org.hibernate.validator.constraints.br.CPF;
 
 import br.com.so.ServiceOrder.domain.Technician;
@@ -8,12 +10,12 @@ public class TechnicianDTO {
 	
 	private Long id;
 
+	@NotEmpty(message = "O campo nome deve estar preenchido")
 	private String name;
-	
-
 	@CPF
+	@NotEmpty(message = "O campo cpf deve estar preenchido")
 	private String cpf;
-
+	@NotEmpty(message = "O campo telefone deve estar preenchido")
 	private String phoneNumber;
 	
 	public TechnicianDTO() {
