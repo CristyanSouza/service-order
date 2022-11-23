@@ -6,13 +6,14 @@ import java.util.Optional;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import br.com.so.ServiceOrder.domain.Person;
 import br.com.so.ServiceOrder.domain.Technician;
 import br.com.so.ServiceOrder.dtos.TechnicianDTO;
+import br.com.so.ServiceOrder.repository.PersonRepository;
 import br.com.so.ServiceOrder.repository.TechnicianRepository;
-import br.com.so.ServiceOrder.services.exception.DuplicatedCpfException;
-import br.com.so.ServiceOrder.services.exception.InvalidCpfException;
 import br.com.so.ServiceOrder.services.exception.ObjectNotFoundException;
 
 @Service
@@ -20,11 +21,13 @@ public class TechnicianService {
 
 	@Autowired
 	private TechnicianRepository techRepository;
+	@Autowired
+	private PersonRepository personRepository;
 
 	public Technician findById(Long id) {
 		Optional<Technician> obj = techRepository.findById(id);
 
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Técnico não encontrado"));
 	}
 
 	public List<Technician> findAll() {
@@ -32,17 +35,17 @@ public class TechnicianService {
 	}
 
 	public Technician create(TechnicianDTO dto) {
-		Optional<Technician> validation = techRepository.findByCpf(dto.getCpf());
+		Optional<Person> validation = personRepository.findByCpf(dto.getCpf());
 
 		if (validation.isPresent()) {
-			throw new DuplicatedCpfException("CPF já cadastrado no sistema");
+			throw new DataIntegrityViolationException("CPF já cadastrado no sistema");
 		}
 
 		try {
 			Technician technician = new Technician(dto.getName(), dto.getCpf(), dto.getName());
 			return techRepository.save(technician);
 		} catch (ConstraintViolationException e) {
-			throw new InvalidCpfException("CPF inválido");
+			throw new DataIntegrityViolationException("CPF inválido");
 
 		}
 	}
@@ -58,6 +61,11 @@ public class TechnicianService {
 	}
 	
 	public void delete(Long id) {
+		Technician technician = techRepository.findById(id).get();
+		
+		if(technician.getListSO().size() > 0) {
+			throw new DataIntegrityViolationException("O funcionário possui ordens de serviços vinculadas");
+		}
 		techRepository.deleteById(id);
 	
 	}
