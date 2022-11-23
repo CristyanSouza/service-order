@@ -46,4 +46,19 @@ public class TechnicianService {
 
 		}
 	}
+	
+	
+	public void update(Long id, TechnicianDTO dto) {
+		Technician technician = techRepository.findById(id).get();
+		technician.setCpf(dto.getCpf());
+		technician.setName(dto.getName());
+		technician.setPhoneNumber(dto.getPhoneNumber());
+		techRepository.save(technician);
+	
+	}
+	
+	public void delete(Long id) {
+		techRepository.deleteById(id);
+	
+	}
 }

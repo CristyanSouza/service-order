@@ -61,7 +61,7 @@ public abstract class Person {
 		return phoneNumber;
 	}
 
-	public void setTelefone(String phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	
