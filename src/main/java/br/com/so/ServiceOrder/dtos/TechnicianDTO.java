@@ -5,11 +5,15 @@ import org.hibernate.validator.constraints.br.CPF;
 import br.com.so.ServiceOrder.domain.Technician;
 
 public class TechnicianDTO {
+	
 	private Long id;
+
 	private String name;
 	
+
 	@CPF
 	private String cpf;
+
 	private String phoneNumber;
 	
 	public TechnicianDTO() {
