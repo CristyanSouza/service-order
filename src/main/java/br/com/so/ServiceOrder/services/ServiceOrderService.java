@@ -1,5 +1,6 @@
 package br.com.so.ServiceOrder.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,12 +9,12 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.so.ServiceOrder.domain.Client;
-import br.com.so.ServiceOrder.domain.ServiceOrder;
-import br.com.so.ServiceOrder.domain.Technician;
 import br.com.so.ServiceOrder.domain.enums.Priority;
 import br.com.so.ServiceOrder.domain.enums.Status;
 import br.com.so.ServiceOrder.dtos.ServiceOrderDTO;
+import br.com.so.ServiceOrder.model.Client;
+import br.com.so.ServiceOrder.model.ServiceOrder;
+import br.com.so.ServiceOrder.model.Technician;
 import br.com.so.ServiceOrder.repository.ServiceOrderRepository;
 import br.com.so.ServiceOrder.services.exception.ObjectNotFoundException;
 
@@ -43,18 +44,37 @@ public class ServiceOrderService {
 	public ServiceOrderDTO create(@Valid ServiceOrderDTO so) {
 		ServiceOrder soToSave = toSo(so);
 		serviceOrderRepository.save(soToSave);
-		
 		return new ServiceOrderDTO(soToSave);
 	}
 	
 	
 		
-	private ServiceOrder toSo(ServiceOrderDTO newObj){
-		Technician technician = techService.findById(newObj.getTechnician());
-		Client client = clientService.findById(newObj.getClient());
+	private ServiceOrder toSo(ServiceOrderDTO osDto){
+		ServiceOrder newSo = new ServiceOrder();
+		Technician technician = techService.findById(osDto.getTechnician());
+		Client client = clientService.findById(osDto.getClient());
 		
-	
-		return new ServiceOrder(Priority.toEnum(newObj.getPriority()), newObj.getComments(), Status.toEnum(newObj.getPriority()),technician,client);
+		newSo.setId(osDto.getId());
+		newSo.setOpeningDate(osDto.getOpeningDate());
+		newSo.setPriority(Priority.toEnum(osDto.getPriority()));
+		newSo.setComments(osDto.getComments());
+		newSo.setStatus(Status.toEnum(osDto.getStatus()));
+		newSo.setClient(client);
+		newSo.setTechnician(technician);
+		
+		return newSo;
+	}
+
+	public ServiceOrderDTO update(@Valid ServiceOrderDTO so) {
+		ServiceOrder serviceOrder = this.toSo(so);
+		
+		if(serviceOrder.getStatus().equals(Status.CLOSED)) {
+			serviceOrder.setClosingDate(LocalDateTime.now());
+		}
+		
+		serviceOrderRepository.save(serviceOrder);
+		
+		return new ServiceOrderDTO(serviceOrder);
 	}
 
 

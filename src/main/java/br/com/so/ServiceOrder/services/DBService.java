@@ -3,11 +3,11 @@ package br.com.so.ServiceOrder.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.so.ServiceOrder.domain.Client;
-import br.com.so.ServiceOrder.domain.ServiceOrder;
-import br.com.so.ServiceOrder.domain.Technician;
 import br.com.so.ServiceOrder.domain.enums.Priority;
 import br.com.so.ServiceOrder.domain.enums.Status;
+import br.com.so.ServiceOrder.model.Client;
+import br.com.so.ServiceOrder.model.ServiceOrder;
+import br.com.so.ServiceOrder.model.Technician;
 import br.com.so.ServiceOrder.repository.ClientRepository;
 import br.com.so.ServiceOrder.repository.ServiceOrderRepository;
 import br.com.so.ServiceOrder.repository.TechnicianRepository;

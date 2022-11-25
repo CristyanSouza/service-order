@@ -1,10 +1,12 @@
-package br.com.so.ServiceOrder.domain;
+package br.com.so.ServiceOrder.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.SecondaryTable;
+import javax.persistence.Table;
 
 @Entity(name = "client")
 public class Client extends Person{

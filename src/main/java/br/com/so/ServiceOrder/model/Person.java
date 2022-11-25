@@ -1,4 +1,4 @@
-package br.com.so.ServiceOrder.domain;
+package br.com.so.ServiceOrder.model;
 
 import java.util.Objects;
 
@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.br.CPF;
+
 
 
 @Entity

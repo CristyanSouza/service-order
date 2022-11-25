@@ -1,4 +1,4 @@
-package br.com.so.ServiceOrder.domain;
+package br.com.so.ServiceOrder.model;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

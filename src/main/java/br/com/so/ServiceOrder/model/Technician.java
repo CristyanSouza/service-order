@@ -1,11 +1,12 @@
-package br.com.so.ServiceOrder.domain;
+package br.com.so.ServiceOrder.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.SecondaryTable;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,6 +18,7 @@ public class Technician extends Person {
 	private List<ServiceOrder> listSO = new ArrayList<>();
 	
 	public Technician() {
+		super();
 	}
 
 	public Technician(String name, String cpf, String phoneNumber) {

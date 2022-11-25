@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import br.com.so.ServiceOrder.domain.Person;
-import br.com.so.ServiceOrder.domain.Technician;
 import br.com.so.ServiceOrder.dtos.TechnicianDTO;
+import br.com.so.ServiceOrder.model.Person;
+import br.com.so.ServiceOrder.model.Technician;
 import br.com.so.ServiceOrder.repository.PersonRepository;
 import br.com.so.ServiceOrder.repository.TechnicianRepository;
 import br.com.so.ServiceOrder.services.exception.ObjectNotFoundException;
@@ -41,13 +41,9 @@ public class TechnicianService {
 			throw new DataIntegrityViolationException("CPF já cadastrado no sistema");
 		}
 
-		try {
-			Technician technician = new Technician(dto.getName(), dto.getCpf(), dto.getName());
+			Technician technician = new Technician(dto.getName(), dto.getCpf(), dto.getPhoneNumber());
 			return techRepository.save(technician);
-		} catch (ConstraintViolationException e) {
-			throw new DataIntegrityViolationException("CPF inválido");
-
-		}
+		
 	}
 	
 	

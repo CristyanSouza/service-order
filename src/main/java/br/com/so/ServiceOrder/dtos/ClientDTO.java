@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import br.com.so.ServiceOrder.domain.Person;
+import br.com.so.ServiceOrder.model.Person;
 
 public class ClientDTO {
 	

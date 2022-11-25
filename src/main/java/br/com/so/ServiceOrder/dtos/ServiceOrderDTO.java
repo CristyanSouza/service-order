@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.com.so.ServiceOrder.domain.ServiceOrder;
+import br.com.so.ServiceOrder.model.ServiceOrder;
 
 
 public class ServiceOrderDTO {

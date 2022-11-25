@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import br.com.so.ServiceOrder.domain.Technician;
+import br.com.so.ServiceOrder.model.Technician;
 
 public class TechnicianDTO {
 	
