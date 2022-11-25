@@ -2,6 +2,8 @@ package br.com.so.ServiceOrder.dtos;
 
 import java.time.LocalDateTime;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -16,6 +18,8 @@ public class ServiceOrderDTO {
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime closingDate;
 	private Integer priority;
+	
+	@NotEmpty(message = "O campo comentário é obrigatório")
 	private String comments;
 	private Integer status;
 	private Long technician;
@@ -30,6 +34,10 @@ public class ServiceOrderDTO {
 		this.status = serviceOrder.getStatus().getCod();
 		this.technician = serviceOrder.getTechnician().getId();
 		this.client = serviceOrder.getClient().getId();
+	}
+	
+	public ServiceOrderDTO() {
+	
 	}
 
 	public Long getId() {
@@ -96,6 +104,8 @@ public class ServiceOrderDTO {
 		this.client = client;
 	}
 
+	
+	
 
 	
 	

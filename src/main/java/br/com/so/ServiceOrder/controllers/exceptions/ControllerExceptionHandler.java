@@ -29,7 +29,7 @@ public class ControllerExceptionHandler {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ValidationError> validation(MethodArgumentNotValidException e){
 		ValidationError error = new ValidationError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(), 
-				"Campo(s) obrigatório(s) não preenchido(s)");
+				"Campos inválidos");
 		
 		e.getBindingResult().getFieldErrors().forEach(x -> error.addError(x.getField(), x.getDefaultMessage()));
 		
