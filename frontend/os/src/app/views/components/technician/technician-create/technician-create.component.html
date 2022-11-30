@@ -1,0 +1,20 @@
+<form class="form">
+    <h1>Novo técnico</h1>
+    <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Ex. Nome completo" >
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="Ex. 000.000.000-00">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input matInput placeholder="Ex. (00) 9 0000-0000">
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="create()" color="accent">Criar</button>
+    <button (click)="navigateToTechnicians()" mat-stroked-button color="warn">Cancelar</button>
+</form>

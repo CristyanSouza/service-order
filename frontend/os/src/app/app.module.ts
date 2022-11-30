@@ -23,6 +23,10 @@ import { HomeComponent } from './views/components/home/home.component';
 import { TechnicianReadComponent } from './views/components/technician/technician-read/technician-read.component';
 import {MatTableModule} from '@angular/material/table'; 
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { TechnicianCreateComponent } from './views/components/technician/technician-create/technician-create.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    TechnicianReadComponent
+    TechnicianReadComponent,
+    TechnicianCreateComponent
     ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatInputModule,
     MatDatepickerModule,
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
