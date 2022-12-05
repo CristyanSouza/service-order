@@ -26,7 +26,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { TechnicianCreateComponent } from './views/components/technician/technician-create/technician-create.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TechnicianUpdateComponent } from './views/components/technician/technician-update/technician-update.component';
-import { TechnicianDeleteComponent } from './views/components/technician/technician-delete/technician-delete.component'; 
+import { TechnicianDeleteComponent } from './views/components/technician/technician-delete/technician-delete.component';
+import { ClientReadComponent } from './views/components/client/client-read/client-read.component'; 
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { TechnicianDeleteComponent } from './views/components/technician/technic
     TechnicianReadComponent,
     TechnicianCreateComponent,
     TechnicianUpdateComponent,
-    TechnicianDeleteComponent
+    TechnicianDeleteComponent,
+    ClientReadComponent
     ],
   imports: [
     BrowserModule,

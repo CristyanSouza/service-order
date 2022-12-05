@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientReadComponent } from './views/components/client/client-read/client-read.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { TechnicianCreateComponent } from './views/components/technician/technician-create/technician-create.component';
 import { TechnicianDeleteComponent } from './views/components/technician/technician-delete/technician-delete.component';
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'technician/delete/:id',
     component: TechnicianDeleteComponent
+  },
+
+  {
+    path: 'client',
+    component: ClientReadComponent
   }
 ];
 
