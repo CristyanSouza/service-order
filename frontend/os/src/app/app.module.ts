@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -24,7 +24,9 @@ import { TechnicianReadComponent } from './views/components/technician/technicia
 import {MatTableModule} from '@angular/material/table'; 
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TechnicianCreateComponent } from './views/components/technician/technician-create/technician-create.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { TechnicianUpdateComponent } from './views/components/technician/technician-update/technician-update.component';
+import { TechnicianDeleteComponent } from './views/components/technician/technician-delete/technician-delete.component'; 
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     NavComponent,
     HomeComponent,
     TechnicianReadComponent,
-    TechnicianCreateComponent
+    TechnicianCreateComponent,
+    TechnicianUpdateComponent,
+    TechnicianDeleteComponent
     ],
   imports: [
     BrowserModule,
@@ -56,6 +60,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatDatepickerModule,
     FormsModule,
+    ReactiveFormsModule,
     MatPaginatorModule,
     MatSnackBarModule
   ],

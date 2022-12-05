@@ -22,10 +22,26 @@ export class TechnicianService {
     return this.http.get<Technician[]>(url);
 }
 
+  findById(id : any):Promise<AxiosResponse<Technician>>{
+    const url = `${this.baseUrl}/technician/${id}`
+    return axios.get<Technician>(url);
+  }
+
   create(technician : Technician):Promise<AxiosResponse<Technician>> {
     const url = this.baseUrl + '/technician'
 
     return axios.post<Technician>(url, technician);
+  } 
+
+  update(technician : Technician):Promise<AxiosResponse<Technician>> {
+    const url = `${this.baseUrl}/technician/${technician.id}`
+    return axios.put<Technician>(url, technician);
+  } 
+
+
+  delete(technician : Technician):Promise<AxiosResponse<Technician>> {
+    const url = `${this.baseUrl}/technician/${technician.id}`
+    return axios.delete<Technician>(url);
   } 
 
   message(msg : String) : void {
