@@ -22,6 +22,29 @@ export class ClientService {
     return this.http.get<Client[]>(url);
 }
 
+findById(id : any):Promise<AxiosResponse<Client>>{
+  const url = `${this.baseUrl}/client/${id}`
+  return axios.get<Client>(url);
+}
+
+create(client : Client):Promise<AxiosResponse<Technician>> {
+  const url = this.baseUrl + '/client'
+
+  return axios.post<Client>(url, client);
+} 
+
+
+
+update(client : Client):Promise<AxiosResponse<Client>> {
+  const url = `${this.baseUrl}/client/${client.id}`
+  return axios.put<Technician>(url, client);
+} 
+
+delete(client : Client):Promise<AxiosResponse<Client>> {
+  const url = `${this.baseUrl}/client/${client.id}`
+  return axios.delete<Client>(url);
+} 
+
   message(msg : String) : void {
     this.snack.open(`${msg}`, 'OK', {
       horizontalPosition: 'end',

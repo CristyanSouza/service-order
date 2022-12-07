@@ -1,22 +1,22 @@
 <form class="form">
-    <h1>Atualizando técnico</h1>
+    <h1>Atualizando cliente</h1>
     <mat-form-field class="full-width">
         <mat-label>Nome</mat-label>
-        <input [formControl]="name" required maxlength="100" [(ngModel)]="technician.name" name="name" matInput placeholder="Ex. Nome completo" >
+        <input [formControl]="name" required maxlength="100" [(ngModel)]="client.name" name="name" matInput placeholder="Ex. Nome completo" >
         <mat-error *ngIf="name.invalid">O nome deve ter entre 5 e 100 caracteres</mat-error>
     </mat-form-field>
     <mat-form-field class="full-width">
         <mat-label>CPF</mat-label>
-        <input [formControl]="cpf" readonly="true" maxlength="15" [(ngModel)]="technician.cpf" name="cpf" matInput placeholder="Ex. 000.000.000-00">
+        <input [formControl]="cpf" readonly="true" maxlength="15" [(ngModel)]="client.cpf" name="cpf" matInput placeholder="Ex. 000.000.000-00">
         <mat-error *ngIf="cpf.invalid">O cpf deve ter entre 11 e 15 caracteres</mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width">
         <mat-label>Telefone</mat-label>
-        <input [formControl]="phoneNumber" required maxlength="18" [(ngModel)]="technician.phoneNumber" name="phoneNumber" matInput placeholder="Ex. (00) 9 0000-0000">
+        <input [formControl]="phoneNumber" required maxlength="18" [(ngModel)]="client.phoneNumber" name="phoneNumber" matInput placeholder="Ex. (00) 9 0000-0000">
         <mat-error *ngIf="phoneNumber.invalid">O telefone deve ter entre 11 e 18 caracteres </mat-error>
     </mat-form-field>
 
     <button mat-stroked-button (click)="update()" [disabled]="cpf.invalid || phoneNumber.invalid || name.invalid" color="accent">Salvar</button>
-    <button (click)="navigateToTechnicians()" mat-stroked-button color="warn">Cancelar</button>
+    <button (click)="navigateToClients()" mat-stroked-button color="warn">Cancelar</button>
 </form>

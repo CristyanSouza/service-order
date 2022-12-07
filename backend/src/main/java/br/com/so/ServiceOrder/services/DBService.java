@@ -24,6 +24,8 @@ public class DBService {
 	
 	public void instanceDb() {
 		Technician tech = new Technician("Cristyan de Souza", "128.031.239-40", "(48) 9 9830-7254");
+		Technician tech2 = new Technician("Tania Regina", "026.721.799-48", "(48) 9 9830-7254");
+
 		Client client= new Client("Tainna Oliveira", "138.693.180-23", "(48) 9 9830-7254");
 		ServiceOrder so = new ServiceOrder(Priority.LOW, "Teste criação h2", Status.IN_PROGRESS, tech, client);		
 		
@@ -31,6 +33,7 @@ public class DBService {
 		client.getListSO().add(so);
 		
 		technicianRepository.save(tech);
+		technicianRepository.save(tech2);
 		clientRepository.save(client);
 		serviceOrderRepository.save(so);
 	}

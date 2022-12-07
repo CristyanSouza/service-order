@@ -27,7 +27,10 @@ import { TechnicianCreateComponent } from './views/components/technician/technic
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TechnicianUpdateComponent } from './views/components/technician/technician-update/technician-update.component';
 import { TechnicianDeleteComponent } from './views/components/technician/technician-delete/technician-delete.component';
-import { ClientReadComponent } from './views/components/client/client-read/client-read.component'; 
+import { ClientReadComponent } from './views/components/client/client-read/client-read.component';
+import { ClientCreateComponent } from './views/components/client/client-create/client-create.component';
+import { ClientUpdateComponent } from './views/components/client/client-update/client-update.component';
+import { ClientDeleteComponent } from './views/components/client/client-delete/client-delete.component'; 
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { ClientReadComponent } from './views/components/client/client-read/clien
     TechnicianCreateComponent,
     TechnicianUpdateComponent,
     TechnicianDeleteComponent,
-    ClientReadComponent
+    ClientReadComponent,
+    ClientCreateComponent,
+    ClientUpdateComponent,
+    ClientDeleteComponent
     ],
   imports: [
     BrowserModule,

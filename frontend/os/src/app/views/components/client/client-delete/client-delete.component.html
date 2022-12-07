@@ -1,0 +1,19 @@
+<form class="form">
+    <h1>Deseja excluir o cliente abaixo?</h1>
+    <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input readonly="true"[(ngModel)]="client.name" name="name" matInput >
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>CPF</mat-label>
+        <input readonly="true"  [(ngModel)]="client.cpf" name="cpf" matInput >
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input readonly="true" [(ngModel)]="client.phoneNumber" name="phoneNumber" matInput>
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="delete()" color="accent">Deletar</button>
+    <button (click)="navigateToClients()" mat-stroked-button color="warn">Cancelar</button>
+</form>
