@@ -31,11 +31,11 @@ No projeto é possível criar, deletar e atualizar clientes e técnicos, assim c
 ## 🚀 Como executar o projeto
 
 Este projeto é divido em três partes:
-1. Backend (pasta server) 
-2. Frontend (pasta web)
-3. Mobile (pasta mobile)
+1. Backend 
+2. Frontend
 
-💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
+
+💡Tanto o Frontend quanto o Backend precisam estar sendo executado para o projeto funcionar.
 
 ### Pré-requisitos
 
