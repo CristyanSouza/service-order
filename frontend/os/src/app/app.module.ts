@@ -30,7 +30,11 @@ import { TechnicianDeleteComponent } from './views/components/technician/technic
 import { ClientReadComponent } from './views/components/client/client-read/client-read.component';
 import { ClientCreateComponent } from './views/components/client/client-create/client-create.component';
 import { ClientUpdateComponent } from './views/components/client/client-update/client-update.component';
-import { ClientDeleteComponent } from './views/components/client/client-delete/client-delete.component'; 
+import { ClientDeleteComponent } from './views/components/client/client-delete/client-delete.component';
+import { ServiceorderReadComponent } from './views/components/serviceorder/serviceorder-read/serviceorder-read.component';
+import { ServiceorderCreateComponent } from './views/components/serviceorder/serviceorder-create/serviceorder-create.component';
+import { ServiceorderUpdateComponent } from './views/components/serviceorder/serviceorder-update/serviceorder-update.component';
+import { ServiceorderViewComponent } from './views/components/serviceorder/serviceorder-view/serviceorder-view.component'; 
 
 
 @NgModule({
@@ -47,7 +51,11 @@ import { ClientDeleteComponent } from './views/components/client/client-delete/c
     ClientReadComponent,
     ClientCreateComponent,
     ClientUpdateComponent,
-    ClientDeleteComponent
+    ClientDeleteComponent,
+    ServiceorderReadComponent,
+    ServiceorderCreateComponent,
+    ServiceorderUpdateComponent,
+    ServiceorderViewComponent
     ],
   imports: [
     BrowserModule,

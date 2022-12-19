@@ -17,3 +17,8 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+a, a:visited {
+  color: rgba(171, 56, 238, 0.596);
+}
+

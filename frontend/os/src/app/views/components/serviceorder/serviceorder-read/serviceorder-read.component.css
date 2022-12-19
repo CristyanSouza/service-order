@@ -1,21 +1,37 @@
 .create {
     margin-bottom: 1rem;
     text-align: right;
-  }
+}
   
-  .create h1{
+.create h1{
     text-align: center;
     font-weight: 500;
   
-  }
-  
-  .container, .create {
+}
+
+.container, .create {
       width: 90%;
       margin-right: auto;
       margin-left: auto;
-  }
+}
 
+  
+.BAIXA {
+    color: green;
+    font-weight: 700;
+}
+  
+.MÉDIA {
+    color: yellow;
+    font-weight: 700;
+}
 
-  a, a:visited {
+    
+.ALTA {
+    color: red;
+    font-weight: 700;
+}
+
+a, a:visited {
     color: rgba(171, 56, 238, 0.596);
   }

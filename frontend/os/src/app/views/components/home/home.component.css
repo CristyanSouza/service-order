@@ -2,4 +2,11 @@ mat-card {
     height: 50%;
     width: 80%;
     margin: 1rem auto 0 auto;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+img {
+    max-width: 250px;
+    max-height: 250px;
 }

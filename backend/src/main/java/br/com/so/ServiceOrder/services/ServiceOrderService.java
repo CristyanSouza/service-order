@@ -55,10 +55,9 @@ public class ServiceOrderService {
 		Client client = clientService.findById(osDto.getClient());
 		
 		newSo.setId(osDto.getId());
-		newSo.setOpeningDate(osDto.getOpeningDate());
-		newSo.setPriority(Priority.toEnum(osDto.getPriority()));
+		newSo.setPriority(osDto.getPriority());
 		newSo.setComments(osDto.getComments());
-		newSo.setStatus(Status.toEnum(osDto.getStatus()));
+		newSo.setStatus(osDto.getStatus());
 		newSo.setClient(client);
 		newSo.setTechnician(technician);
 		

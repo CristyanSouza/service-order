@@ -2,11 +2,10 @@
     height: 83%;
 }
 
-i {
+a {
     margin-right: 1rem;
+    margin-top: 2px;
 }
-
-
 
 button {
     margin: 1rem auto 0 1rem;

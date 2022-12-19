@@ -7,6 +7,8 @@ import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.com.so.ServiceOrder.domain.enums.Priority;
+import br.com.so.ServiceOrder.domain.enums.Status;
 import br.com.so.ServiceOrder.model.ServiceOrder;
 
 
@@ -64,8 +66,8 @@ public class ServiceOrderDTO {
 		this.closingDate = closingDate;
 	}
 
-	public Integer getPriority() {
-		return priority;
+	public Priority getPriority() {
+		return Priority.toEnum(priority);
 	}
 
 	public void setPriority(Integer priority) {
@@ -80,8 +82,8 @@ public class ServiceOrderDTO {
 		this.comments = comments;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Status getStatus() {
+		return Status.toEnum(status);
 	}
 
 	public void setStatus(Integer status) {

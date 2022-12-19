@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Observações da ordem de serviço</h1>
+    <mat-card>
+        <mat-card-header>
+            <p>Número da ordem de serviço: {{soView.id}}</p>
+        </mat-card-header>
+
+        <mat-card-content class="dates">
+            <p>
+                Data de abertura: {{soView.openingDate}}
+            </p>
+            <p>Data de fechamento: {{soView.closingDate}}
+            </p>
+        </mat-card-content>
+
+        <mat-card-content class="content">
+            <p>
+                <span> Técnico:</span> {{soView.technician}}
+            </p>
+            <p>
+                <span>Cliente:</span> {{soView.client}}
+            </p>
+            <p>
+                <span> Prioridade: </span>{{soView.priority}}
+            </p>
+            <p>
+                <span> Status:</span> {{soView.status}}
+            </p>
+        </mat-card-content>
+
+        <mat-card-content class="comments">
+            <p>
+                <span>Comentários:</span>
+            </p>
+            <p id="comments">
+                {{soView.comments}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+    <button class="mat-elevetion-z8" (click)="navigateToServicesOrder()" mat-stroked-button color="warn">Voltar</button>
+
+</div>
