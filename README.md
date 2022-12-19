@@ -1,4 +1,4 @@
-<h1 align="center"> Projeto Service Order </h1>
+<h1 align="center"> 💻 Projeto Service Order </h1>
 
 <p>Projeto criado para colocar em prática o aprendizado em Java e Spring Framework, além de novos aprendizados em Angular JS no frontend.<br>
 No projeto é possível criar, deletar e atualizar clientes e técnicos, assim como, criar e visualizar ordens de serviço.
@@ -19,3 +19,11 @@ No projeto é possível criar, deletar e atualizar clientes e técnicos, assim c
 - TypeScript
 - HTML
 - CSS
+
+
+<h1 align="center"> Endpoints da API: </h1>
+
+<h3> Técnicos: </h3>
+
+<h4>GET /technician <h4>
+<p> Listagem de todos os técnicos <p>
