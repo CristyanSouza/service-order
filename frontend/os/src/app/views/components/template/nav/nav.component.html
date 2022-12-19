@@ -1,32 +1,42 @@
 <mat-drawer-container class="container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
         <mat-nav-list class="nav-list">
-            <a  mat-list-item routerLink="/">
-                <i class="material-icons">home</i> <span class="nav-item-description"> Home</span>
+            <a mat-list-item routerLink="/">
+                <div class="itens-menu">
+                    <i class="material-icons">home</i> <span class="nav-item-description"> Home</span>
+                </div>
             </a>
             <a mat-list-item routerLink="technician">
-                <i class="material-icons">work</i><span class="nav-item-description">Técnicos</span>
+                <div class="itens-menu">
+                    <i class="material-icons">work</i><span class="nav-item-description">Técnicos</span>
+                </div>
+
             </a>
-            <a  mat-list-item routerLink="client">
-                <i class="material-icons">person_search</i><span class="nav-item-description">Clientes</span>
+            <a mat-list-item routerLink="client">
+                <div class="itens-menu">
+                    <i class="material-icons">person_search</i><span class="nav-item-description">Clientes</span>
+                </div>
+
             </a>
             <a mat-list-item routerLink="serviceorder">
-                <i class="material-icons">person_pin</i><span class="nav-item-description">Ordens de Serviço</span>
+                <div class="itens-menu">
+                    <i class="material-icons">person_pin</i><span class="nav-item-description">Ordens de Serviço</span>
+                </div>
+
             </a>
 
         </mat-nav-list>
     </mat-drawer>
-  
-    <div class="sidenav-content">
-      <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon>more_vert</mat-icon>
-    </button>
 
-    
-    <router-outlet></router-outlet>
+    <div class="sidenav-content">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+
+        <router-outlet></router-outlet>
 
     </div>
 
-  
-  </mat-drawer-container>
-  
+
+</mat-drawer-container>
