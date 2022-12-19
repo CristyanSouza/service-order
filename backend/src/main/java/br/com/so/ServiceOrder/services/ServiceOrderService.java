@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.so.ServiceOrder.domain.enums.Priority;
 import br.com.so.ServiceOrder.domain.enums.Status;
 import br.com.so.ServiceOrder.dtos.ServiceOrderDTO;
 import br.com.so.ServiceOrder.model.Client;

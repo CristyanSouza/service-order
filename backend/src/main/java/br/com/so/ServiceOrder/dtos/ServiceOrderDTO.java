@@ -2,7 +2,6 @@ package br.com.so.ServiceOrder.dtos;
 
 import java.time.LocalDateTime;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
