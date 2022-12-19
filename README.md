@@ -20,10 +20,9 @@ No projeto é possível criar, deletar e atualizar clientes e técnicos, assim c
 - HTML
 - CSS
 
+## 🎨 Layout
 
-<h1 align="center"> Endpoints da API: </h1>
-
-<h3> Técnicos: </h3>
-
-<h4>GET /technician <h4>
-<p> Listagem de todos os técnicos <p>
+![image](https://user-images.githubusercontent.com/104795862/208545052-2db24d19-dda9-4396-99e3-1ea3c1abbbd6.png)
+![image](https://user-images.githubusercontent.com/104795862/208545117-6d92c0f1-e5ec-4c9d-8594-2b5659b49949.png)
+![image](https://user-images.githubusercontent.com/104795862/208545152-2cf1a916-71a8-49ed-aeab-70704ad0ff23.png)
+![image](https://user-images.githubusercontent.com/104795862/208545215-061266e3-d867-409e-b512-c03e7285e0b2.png)
