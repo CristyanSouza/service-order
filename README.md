@@ -28,6 +28,10 @@ No projeto é possível criar, deletar e atualizar clientes e técnicos, assim c
 ![image](https://user-images.githubusercontent.com/104795862/208545215-061266e3-d867-409e-b512-c03e7285e0b2.png)
 
 
+## 📺 Vídeo do projeto funcionando
+
+https://www.linkedin.com/posts/cristyan-de-souza-99a003183_java-mysql-springboot-activity-7010755897127776256-53Nq?utm_source=share&utm_medium=member_desktop
+
 ## 🚀 Como executar o projeto
 
 Este projeto é divido em duas partes:
