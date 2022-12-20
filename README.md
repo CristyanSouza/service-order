@@ -30,12 +30,12 @@ No projeto é possível criar, deletar e atualizar clientes e técnicos, assim c
 
 ## 🚀 Como executar o projeto
 
-Este projeto é divido em três partes:
+Este projeto é divido em duas partes:
 1. Backend 
 2. Frontend
 
 
-💡Tanto o Frontend quanto o Backend precisam estar sendo executado para o projeto funcionar.
+💡Tanto o Frontend quanto o Backend precisam estar sendo executados para o projeto funcionar.
 
 ### Pré-requisitos
 
