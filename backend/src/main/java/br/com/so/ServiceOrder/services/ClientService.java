@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import br.com.so.ServiceOrder.dtos.ClientDTO;
 import br.com.so.ServiceOrder.model.Client;
 import br.com.so.ServiceOrder.model.Person;
+import br.com.so.ServiceOrder.model.ServiceOrder;
 import br.com.so.ServiceOrder.repository.ClientRepository;
 import br.com.so.ServiceOrder.repository.PersonRepository;
 import br.com.so.ServiceOrder.services.exception.ObjectNotFoundException;
@@ -59,7 +60,9 @@ public class ClientService {
 	public void delete(Long id) {
 		Client client = clientRepository.findById(id).get();
 		
-		if(client.getListSO().size() > 0) {
+		List<ServiceOrder> soList = client.getListSO();
+		
+		if(soList.size() > 0) {
 			throw new DataIntegrityViolationException("O cliente possui ordens de serviços vinculadas");
 		}
 		clientRepository.deleteById(id);

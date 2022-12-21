@@ -28,5 +28,9 @@ public class Technician extends Person {
 	}
 
 	
+	public void addSo(ServiceOrder serviceOrder) {
+		this.listSO.add(serviceOrder);
+	}
+	
 	
 }

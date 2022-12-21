@@ -23,6 +23,10 @@ public class Client extends Person{
 	public List<ServiceOrder> getListSO() {
 		return listSO;
 	}
+
+	public void addSo(ServiceOrder serviceOrder) {
+		this.listSO.add(serviceOrder);
+	}
 	
 	
 	
