@@ -2,6 +2,9 @@ package br.com.so.ServiceOrder.services;
 
 import static org.mockito.Mockito.verify;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +19,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import br.com.so.ServiceOrder.domain.enums.Status;
 import br.com.so.ServiceOrder.dtos.ServiceOrderDTO;
 import br.com.so.ServiceOrder.model.Client;
 import br.com.so.ServiceOrder.model.ServiceOrder;
@@ -54,6 +58,7 @@ class ServiceOrderServiceTest {
 		serviceOrder.setComments("test");
 		serviceOrder.setTechnician(technician);
 		serviceOrder.setClient(client);
+		serviceOrder.setStatus(Status.CLOSED);
 		soDTO = new ServiceOrderDTO(serviceOrder);
 	}
 	
@@ -120,6 +125,18 @@ class ServiceOrderServiceTest {
 		Mockito.when(techService.findById(Mockito.anyLong())).thenReturn(technician);
 		Mockito.when(clientService.findById(Mockito.anyLong())).thenReturn(client);
 		service.update(soDTO);
+		verify(serviceOrderRepository, Mockito.times(1)).save(Mockito.any(ServiceOrder.class));
+	}
+	
+	
+	@Test
+	void ShouldAlterClosingDateToDateTimeIfTheStatusIsChangedToClosed() {
+		Mockito.when(techService.findById(Mockito.anyLong())).thenReturn(technician);
+		Mockito.when(clientService.findById(Mockito.anyLong())).thenReturn(client);
+		ServiceOrderDTO dto = service.update(soDTO);
+		LocalDateTime now = LocalDateTime.now();
+		
+		Assertions.assertEquals(now.getDayOfYear(), dto.getClosingDate().getDayOfYear());
 		verify(serviceOrderRepository, Mockito.times(1)).save(Mockito.any(ServiceOrder.class));
 	}
 

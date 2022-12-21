@@ -65,8 +65,10 @@ public class TechnicianController {
 		}
 	
 	@DeleteMapping(value = "/{id}")
-	public void delete(@PathVariable Long id) {
+	public ResponseEntity<String> delete(@PathVariable Long id) {
 		techService.delete(id);
+		
+		return ResponseEntity.ok().body("Tecnico excluido com sucesso");
 		}
 
 

@@ -53,7 +53,7 @@ class ClientServiceTest {
 	@BeforeEach
 	public void setup() {
 		MockitoAnnotations.openMocks(this);
-		client = new Client("Cristyan de Souza", "128.031.239-40", "48 9 98307254");
+		client = new Client("Cristyan de Souza", "374.499.550-08", "48 9 98307254");
 		clientOptional = Optional.of(new Client("Cristyan de Souza", "374.499.550-08", "48 9 98307254"));
 		personOptional = Optional.of(new Client("Cristyan de Souza", "374.499.550-08", "48 9 98307254"));
 		clientDTO = new ClientDTO(client);

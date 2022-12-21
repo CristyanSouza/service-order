@@ -23,54 +23,49 @@ import br.com.so.ServiceOrder.dtos.ClientDTO;
 import br.com.so.ServiceOrder.model.Client;
 import br.com.so.ServiceOrder.services.ClientService;
 
-
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/client")
 public class ClientController {
 
 	@Autowired
-	private ClientService ClientService;
-	
+	private ClientService clientService;
+
 	@GetMapping
-	public ResponseEntity<List<ClientDTO>> findAll(){
-		List<ClientDTO> listDTO = ClientService.findAll().stream().map(tec -> new ClientDTO(tec)).collect(Collectors.toList());
-				
+	public ResponseEntity<List<ClientDTO>> findAll() {
+		List<ClientDTO> listDTO = clientService.findAll().stream().map(tec -> new ClientDTO(tec))
+				.collect(Collectors.toList());
+
 		return ResponseEntity.ok().body(listDTO);
 	}
-	
-	
+
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ClientDTO> findById(@PathVariable Long id) {
-		ClientDTO objDTO = new ClientDTO(ClientService.findById(id));
-		
+		ClientDTO objDTO = new ClientDTO(clientService.findById(id));
+
 		return ResponseEntity.ok().body(objDTO);
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<ClientDTO> create( @RequestBody @Valid ClientDTO ClientDTO){
-		Client client = ClientService.create(ClientDTO);
-		
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(client.getId()).toUri();
-		
-		return ResponseEntity.created(uri).build();	
-		}
-	
+	public ResponseEntity<ClientDTO> create(@RequestBody @Valid ClientDTO ClientDTO) {
+		Client client = clientService.create(ClientDTO);
+
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(client.getId()).toUri();
+
+		return ResponseEntity.created(uri).build();
+	}
+
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<ClientDTO> update(@PathVariable Long id, @RequestBody @Valid ClientDTO objDTO) {
-		ClientService.update(id, objDTO);
+		clientService.update(id, objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
-		return ResponseEntity.ok().location(uri).build();		
-		}
-	
+		return ResponseEntity.ok().location(uri).build();
+	}
+
 	@DeleteMapping(value = "/{id}")
-	public void delete(@PathVariable Long id) {
-		ClientService.delete(id);
-		}
+	public ResponseEntity<String> delete(@PathVariable Long id) {
+		clientService.delete(id);
+		return ResponseEntity.ok().body("Cliente excluido com sucesso");
+	}
 
-
-	
-	
-	
 }
