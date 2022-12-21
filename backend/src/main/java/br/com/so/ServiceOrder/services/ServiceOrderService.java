@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,9 @@ public class ServiceOrderService {
 	@Autowired
 	private ClientService clientService;
 	
+
+	
+	
 	public List<ServiceOrder> findAll() {
 		List<ServiceOrder> list = serviceOrderRepository.findAll();
 
@@ -41,27 +45,13 @@ public class ServiceOrderService {
 	}
 
 	public ServiceOrderDTO create(@Valid ServiceOrderDTO so) {
-		ServiceOrder soToSave = toSo(so);
+		ServiceOrder soToSave = this.toSo(so);
 		serviceOrderRepository.save(soToSave);
 		return new ServiceOrderDTO(soToSave);
 	}
 	
 	
 		
-	private ServiceOrder toSo(ServiceOrderDTO osDto){
-		ServiceOrder newSo = new ServiceOrder();
-		Technician technician = techService.findById(osDto.getTechnician());
-		Client client = clientService.findById(osDto.getClient());
-		
-		newSo.setId(osDto.getId());
-		newSo.setPriority(osDto.getPriority());
-		newSo.setComments(osDto.getComments());
-		newSo.setStatus(osDto.getStatus());
-		newSo.setClient(client);
-		newSo.setTechnician(technician);
-		
-		return newSo;
-	}
 
 	public ServiceOrderDTO update(@Valid ServiceOrderDTO so) {
 		ServiceOrder serviceOrder = this.toSo(so);
@@ -76,4 +66,20 @@ public class ServiceOrderService {
 	}
 
 
+	
+	public ServiceOrder toSo(ServiceOrderDTO osDto){
+		ServiceOrder newSo = new ServiceOrder();
+		Technician technician = techService.findById(osDto.getTechnician());
+		Client client = clientService.findById(osDto.getClient());
+		
+		newSo.setId(osDto.getId());
+		newSo.setPriority(osDto.getPriority());
+		newSo.setComments(osDto.getComments());
+		newSo.setStatus(osDto.getStatus());
+		newSo.setClient(client);
+		newSo.setTechnician(technician);
+		
+		return newSo;
+	}
+	
 }

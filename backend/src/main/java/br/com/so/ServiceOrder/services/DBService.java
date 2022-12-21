@@ -31,6 +31,7 @@ public class DBService {
 		List<Client> clients = new ArrayList<>();
 		List<ServiceOrder> serviceOrders = new ArrayList<>();
 
+		
 
 		technicians.add(new Technician("Iago Takeda", "888.362.060-77", "(63) 3813-1339"));
 		technicians.add(new Technician("Eric Leite", "435.404.270-31", "(63) 3001-6866"));
